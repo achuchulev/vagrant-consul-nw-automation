@@ -25,21 +25,19 @@ Vagrant.configure("2") do |config|
   end
    (1..(APP_SERVER_COUNT)).each do |i|
         config.vm.define vm_name="app-server#{i}" do |app_server|
-        app_server.vm.box = "achuchulev/bionic64"
+        app_server.vm.box = "achuchulev/nginx64"
         app_server.vm.hostname = vm_name
         app_server.vm.network "public_network", ip: "192.168.11.1#{i}", netmask:"255.255.255.0"
-        app_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/nginx.sh", privileged: true
         app_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_client.sh", privileged: true
      end
    end
    config.vm.define vm_name="nginx-lb" do |nginx_lb|
-     nginx_lb.vm.box = "achuchulev/bionic64"
+     nginx_lb.vm.box = "achuchulev/nginx64"
      nginx_lb.vm.hostname = vm_name
-     nginx_lb.vm.network "forwarded_port", guest: 8080, host: 8080
+     nginx_lb.vm.network "forwarded_port", guest: 80, host: 8080
      nginx_lb.vm.network "private_network", ip: "192.168.10.10", netmask:"255.255.255.0"
      nginx_lb.vm.provision "shell", path: "#{vagrant_assets}/scripts/nginx.sh", privileged: true
      nginx_lb.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_client.sh", privileged: true
      nginx_lb.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_template.sh", privileged: true
-     nginx_lb.vm.provision "shell", path: "#{vagrant_assets}/scripts/nginx_lb.sh", privileged: true
    end
 end
