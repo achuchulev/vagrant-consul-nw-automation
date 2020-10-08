@@ -9,6 +9,7 @@ which curl wget unzip jq dig &>/dev/null || {
 }
 
 CONSUL=$(curl -sL https://releases.hashicorp.com/consul/index.json | jq -r '.versions[].version' | sort -V | egrep -v 'ent|beta|rc|alpha' | tail -n1)
+CONSUL_TEMPLATE=$(curl -sL https://releases.hashicorp.com/consul-template/index.json | jq -r '.versions[].version' | sort -V | egrep -v 'ent|beta|rc|alpha' | tail -n1)
 
 which consul &>/dev/null || {
   echo Installing vault ${CONSUL}
@@ -29,4 +30,11 @@ which consul &>/dev/null || {
   systemctl enable consul
   systemctl start consul
   systemctl status consul
+}
+
+which consul &>/dev/null || {
+  echo Installing vault ${CONSUL_TEMPLATE}
+  wget https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE}/consul-template_${CONSUL_TEMPLATE}_linux_amd64.zip
+  unzip consul-template_${CONSUL_TEMPLATE}_linux_amd64.zip
+  mv consul-template /usr/local/bin
 }
