@@ -2,6 +2,9 @@
 
 set -x
 
+# Configure nginx
+echo "Installing nginx...."
+
 which curl wget unzip jq dig nginx &>/dev/null || {
   export DEBIAN_FRONTEND=noninteractive
   apt-get update
