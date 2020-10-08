@@ -30,6 +30,7 @@ Vagrant.configure("2") do |config|
         app_server.vm.hostname = vm_name
         app_server.vm.network "public_network", ip: "192.168.11.1#{i}", netmask:"255.255.255.0"
         app_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_client.sh", privileged: true
+        app_server.vm.provision "file", source: "#{vagrant_assets}/service_config/web-service.hcl", destination: "/etc/consul.d/web-service.hcl"
      end
    end
    config.vm.define vm_name="nginx-lb" do |nginx_lb|
