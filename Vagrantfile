@@ -36,8 +36,8 @@ Vagrant.configure("2") do |config|
      nginx_lb.vm.hostname = vm_name
      nginx_lb.vm.network "forwarded_port", guest: 80, host: 8080
      nginx_lb.vm.network "private_network", ip: "192.168.10.10", netmask:"255.255.255.0"
-     nginx_lb.vm.provision "shell", path: "#{vagrant_assets}/scripts/nginx.sh", privileged: true
      nginx_lb.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_client.sh", privileged: true
      nginx_lb.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_template.sh", privileged: true
+     nginx_lb.vm.provision "shell", path: "#{vagrant_assets}/scripts/nginx_lb.sh", privileged: true
    end
 end
