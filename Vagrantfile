@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
        consul_server.vm.network "forwarded_port", guest: 8500, host: 8500 if i == 1
        consul_server.vm.network "private_network", ip: "192.168.10.1#{i}", netmask:"255.255.255.0"
        consul_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_server.sh", privileged: true
+       consul_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_template.sh", privileged: true
     end
   end
    (1..(APP_SERVER_COUNT)).each do |i|
