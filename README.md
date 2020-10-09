@@ -1,18 +1,18 @@
-# Sample repo to describe how to use Consul and Consul template to automatically update an NGINX configuration file with the latest list of backend servers using Consul's service discovery.
+# Automate NW Infra with Consul and Consul template 
 
-### This repo is based on HashiCorp's Consul use case for [Network Infrastructure Automation](https://www.consul.io/use-cases/network-infrastructure-automation) described here: [Load Balancing with NGINX and Consul Template](https://learn.hashicorp.com/tutorials/consul/load-balancing-nginx)
+### This repo is based on HashiCorp's Consul use case for [Network Infrastructure Automation](https://www.consul.io/use-cases/network-infrastructure-automation) to automatically update an NGINX configuration file with the latest list of backend servers using Consul's service discovery as described here: [Load Balancing with NGINX and Consul Template](https://learn.hashicorp.com/tutorials/consul/load-balancing-nginx)
 
 ### High Level Overview
 
 <img src="diagram/consul-nginx-template-arch.PNG" />
 
-### Requirements:
+## Requirements:
 
 - git
 - vagrant
 - virtualbox
 
-### How to use
+## How to use
 
 #### Get the repo
 
