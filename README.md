@@ -17,8 +17,8 @@
 #### Get the repo
 
 ```
-$ git clone https://github.com/achuchulev/vagrant-nginx-lb-consul-template.git
-$ cd vagrant-nginx-lb-consul-template
+$ git clone https://github.com/achuchulev/vagrant-consul-nw-automation.git
+$ cd vagrant-consul-nw-automation
 ```
 #### Provision
 
