@@ -42,6 +42,7 @@ $ vagrant up
   upstream backend {
     server 192.168.10.21:80;
     server 192.168.10.22:80;
+    server 192.168.10.23:80;
   }
 
   server {
@@ -69,6 +70,7 @@ $ vagrant up
  $ sudo cat /etc/nginx/sites-available/default
  upstream backend {
   server 192.168.10.22:80;
+  server 192.168.10.23:80;
  }
 
  server {
