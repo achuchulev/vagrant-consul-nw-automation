@@ -29,8 +29,8 @@ Vagrant.configure("2") do |config|
         app_server.vm.hostname = vm_name
         app_server.vm.network "private_network", ip: "192.168.10.2#{i}", netmask:"255.255.255.0"
         app_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/consul_client.sh", privileged: true
-        app_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/nginx_index.sh", privileged: true
         app_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/web-service_register.sh", privileged: true
+        app_server.vm.provision "shell", path: "#{vagrant_assets}/scripts/nginx_index.sh", privileged: true
      end
    end
    config.vm.define vm_name="nginx-lb" do |nginx_lb|
