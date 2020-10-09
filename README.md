@@ -4,7 +4,7 @@
 
 ### High Level Overview
 
-<img src="diagrams/consul-nginx-template-arch.PNG" />
+<img src="diagram/consul-nginx-template-arch.PNG" />
 
 ### Requirements:
 
