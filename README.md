@@ -27,12 +27,12 @@ $ vagrant up
 ```
 
 - `vagrant up` will create the following instances on virtualbox:
-  -  3 new VMs running Consul agents in `server` mode for Consul cluster
-  -  3 new VMs running Consul agents in `client` mode and `Nginx` for our web app
+  -  3 VMs running Consul agents in `server` mode for Consul cluster
+  -  3 VMs running Consul agents in `client` mode and `Nginx` for our web app
   -  1 VM running `Nginx` load balancer and a `consul-template`
 
 #### Use
-  - Access [Consul UI](http://192.168.10.11:8500/ui/) to verify that consul cluster is up and there are 3 `web` services registered 
+  - Access [Consul UI](http://192.168.10.11:8500/ui/) to verify that consul cluster is up and there are 3 `web` services registered within Consul registry
   - Access [Nginx Load Balancer](http://192.168.10.10) to verify that it serves queries
   - Examine `nginx` configuration on Nginx LB VM
   
