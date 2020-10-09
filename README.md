@@ -20,7 +20,7 @@
 $ git clone https://github.com/achuchulev/vagrant-nginx-lb-consul-template.git
 $ cd vagrant-nginx-lb-consul-template
 ```
-#### Run
+#### Provision
 
 ```
 $ vagrant up
@@ -80,7 +80,7 @@ $ vagrant up
  }
  ```
  
-### Destroy
+#### Destroy
 
 ```
 $ vagrant destroy -f
