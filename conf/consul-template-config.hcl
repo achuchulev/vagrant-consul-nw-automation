@@ -1,5 +1,5 @@
 consul {
-  address = "localhost:8500"
+  address = "192.168.10.11:8500"
 
   retry {
     enabled  = true
@@ -8,8 +8,8 @@ consul {
   }
 }
 template {
-  source      = "/etc/nginx/conf.d/load-balancer.conf.ctmpl"
-  destination = "/etc/nginx/conf.d/load-balancer.conf"
+  source      = "/etc/nginx/sites-available/load-balancer.conf.ctmpl"
+  destination = "/etc/nginx/sites-available/default"
   perms       = 0600
   command     = "service nginx reload"
 }

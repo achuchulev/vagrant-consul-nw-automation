@@ -23,7 +23,6 @@ which consul &>/dev/null || {
   chown --recursive consul:consul /opt/consul
   cp /vagrant/conf/consul_server.service /etc/systemd/system/consul.service
   mkdir --parents /etc/consul.d
-  cp /vagrant/consul_config/consul-template-config.hcl /etc/consul.d/consul-template-config.hcl
   cp /vagrant/conf/consul_server.hcl /etc/consul.d/consul.hcl
   chown --recursive consul:consul /etc/consul.d
   chmod 640 /etc/consul.d/consul.hcl
