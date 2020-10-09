@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 CONSUL_SERVER_COUNT = 3
-APP_SERVER_COUNT = 2
+APP_SERVER_COUNT = 3
 
 vagrant_assets = File.dirname(__FILE__) + "/"
 
