@@ -62,7 +62,7 @@ $ vagrant up
  $ sudo service nginx stop
  ```
  
- - Access [Nginx Load Balancer](http://192.168.10.10) to verify that it continue to serve queries
+ - Access [Nginx Load Balancer](http://192.168.10.10) to verify that it continues to serve queries
  - Examine `nginx` configuration on Nginx LB VM
  
  ```
