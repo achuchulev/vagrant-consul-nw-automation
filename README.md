@@ -28,7 +28,7 @@ $ vagrant up
 
 - `vagrant up` will create the following instances on virtualbox:
   -  3 new VMs running Consul agents in `server` mode for Consul cluster
-  -  2 new VMs running Consul agents in `client` mode and `Nginx` for our web app
+  -  3 new VMs running Consul agents in `client` mode and `Nginx` for our web app
   -  1 VM running `Nginx` load balancer and a `consul-template`
 
 #### Use
