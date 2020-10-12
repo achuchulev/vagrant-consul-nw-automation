@@ -7,6 +7,9 @@ set -x
  rm -fr /var/www/html/index.nginx-debian.html
 }  
 
-consul catalog nodes -service=web | grep $(hostname) > /var/www/html/index.nginx-debian.html
-
-service nginx reload
+if [ $(consul catalog nodes -service=web | wc -l) -eq 0 ]; then
+    sleep 10
+    consul catalog nodes -service=web | grep $(hostname) > /var/www/html/index.nginx-debian.html
+else
+    consul catalog nodes -service=web | grep $(hostname) > /var/www/html/index.nginx-debian.html
+fi
